@@ -22,6 +22,10 @@ app.get("/urls", (req,res)=> {
   res.render("urls_index",templateVars);
 
 });
+app.get("/urls/:id", (req, res) => {
+  const templateVars = { id: req.id, longURL: req[id] };
+  res.render("urls_show", templateVars);
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
